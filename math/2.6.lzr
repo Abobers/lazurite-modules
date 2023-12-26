@@ -76,7 +76,7 @@ func subfactorial(x) {
 
 func sf(x) {
     for (result = 1, x > 1, x--) {
-	    result *= factorial(x)
+        result *= factorial(x)
     }
     return result
 }
