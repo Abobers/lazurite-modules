@@ -84,16 +84,16 @@ func sf(x) {
 
 
 func ceil(x, arg = 0) {
-	arg = power(10, arg)
-	return math.ceil(x * arg) / arg
+    arg = power(10, arg)
+    return math.ceil(x * arg) / arg
 }
 
 func round(x, arg = 0) {
-	arg = power(10, arg)
-	return math.round(x * arg) / arg
+    arg = power(10, arg)
+    return math.round(x * arg) / arg
 }
 
 func floor(x, arg = 0) {
-	arg = power(10, arg)
-	return math.floor(x * arg) / arg
+    arg = power(10, arg)
+    return math.floor(x * arg) / arg
 }
