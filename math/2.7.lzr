@@ -1,0 +1,99 @@
+using "reflection"
+
+math = JClass("java.lang.Math")
+
+PI = math.PI
+E = math.E
+
+
+func sqrt(x) {
+	return math.sqrt(double(x))
+}
+
+func cbrt(x) {
+	return math.cbrt(double(x))
+}
+
+
+
+func log(x) {
+	return math.log(double(x))
+}
+
+func log10(x) {
+	return math.log10(double(x))
+}
+
+
+
+func abs(x) {
+	return math.abs(x)
+}
+
+func power(x, y) {
+	return math.pow(double(x), double(y))
+}
+
+func exp(x) {
+	return math.exp(double(x))
+}
+
+func tetration(x, tetrate) {
+	for(result = x, tetrate > 0, tetrate--) {
+		result = power(result, x)
+	}
+	return result
+}
+
+func signum(x) {
+	return int(math.signum(double(x)))
+}
+
+
+
+func factorial(x) {
+    for (result = 1, x > 1, x--) {
+        result *= x
+    }
+    return result
+}
+
+func double_factorial(x) {
+    for (result = 1, x > 0, x -= 2) {
+        result *= x
+    }
+    return result
+}
+
+func subfactorial(x) {
+    if (x == 0) {
+        return 1
+    }
+    else {
+        return math.round(factorial(x) / E)
+    }
+}
+
+func sf(x) {
+	for (result = 1, x > 1, x--) {
+		result *= factorial(x)
+	}
+	return result
+}
+
+
+
+func ceil(x, arg = 0) {
+	arg = power(10, arg)
+	return math.ceil(x * arg) / arg
+}
+
+func round(x, arg = 0) {
+	arg = power(10, arg)
+	return math.round(x * arg) / arg
+}
+
+func floor(x, arg = 0) {
+	arg = power(10, arg)
+	return math.floor(x * arg) / arg
+}
