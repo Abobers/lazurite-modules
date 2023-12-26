@@ -1,5 +1,5 @@
 {
     "author": "Abobers",
     "version": "1.0",
-    "lazurite": ["2.6.3", "2.7"]
+    "lazurite": ["2.5", "2.6", "2.6.3", "2.7"]
 }
