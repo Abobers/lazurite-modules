@@ -1,0 +1,27 @@
+using "Reflection"
+
+math = JClass("java.lang.Math")
+
+
+func degrees(x) = math.toDegrees(double(x))
+func radians(x) = math.toRadians(double(x))
+
+
+func sin(x) = math.sin(double(x))
+func sinh(x) = math.sinh(double(x))
+func asin(x) = math.asin(double(x))
+
+
+func cos(x) = math.cos(double(x))
+func cosh(x) = math.cosh(double(x))
+func acos(x) = math.acos(double(x))
+
+
+func tan(x) = math.tan(double(x))
+func tanh(x) = math.tan(double(x))
+func atan(x) = math.atan(double(x))
+
+
+func cotan(x) = cos(x) / sin(x)
+func sec(x) = 1 / cos(x)
+func cosec(x) = 1 / sin(x)
