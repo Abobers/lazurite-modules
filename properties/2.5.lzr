@@ -1,0 +1,49 @@
+using "java"
+
+FileOutputStream = JClass("java.io.FileOutputStream")
+FileInputStream = JClass("java.io.FileInputStream")
+Properties = JClass("java.util.Properties")
+
+class _PropertiesFile {
+	func _PropertiesFile(name) {
+		this.name = name
+		this.values = new Properties()
+		file = new FileInputStream(this.name)
+		this.values.load(file)
+		file.close()
+	}
+	
+	func get(key) {
+		return str(this.values.getProperty(str(key)))
+	}
+	
+	func set(key, value) {
+		this.values.setProperty(str(key), str(value))
+	}
+	
+	func load(name) {
+		file = new FileInputStream(name)
+		this.values.load(file)
+		file.close()
+	}
+	
+	func clear() {
+		this.values = new Properties()
+	}
+	
+	func save(name) {
+		file = new FileOutputStream(name)
+		this.valies.list(file)
+		file.close()
+	}
+	
+	func store(comment) {
+		file = new FileOutputStream(this.name)
+		this.values.store(file, str(comment))
+		file.close()
+	}
+}
+
+func PropertiesFile(name) {
+	return new _PropertiesFile(name)
+}
