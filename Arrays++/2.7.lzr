@@ -1,0 +1,136 @@
+using "Arrays"
+using "random"
+
+
+
+func max(arr) {
+	result = 0
+	for(item : arr) {
+		if (item > result) {
+			result = item
+		}
+	}
+	return result
+}
+
+func min(arr) {
+	result = 0
+	for(item : arr) {
+		if (item < result) {
+			result = item
+		}
+	}
+	return result
+}
+
+
+
+func any(arr) {
+	if (arr == []) {
+		return false
+	}
+	for(item : arr) {
+		if (item) {
+			return true
+		}
+	}
+	return false
+}
+
+func all(arr) {
+	if (arr == []) {
+		return false
+	}
+	for(item : arr) {
+		if (!item) {
+			return false
+		}
+	}
+	return true
+}
+
+func in(value, arr) {
+	for (item : arr) {
+		if (item == value) {
+			return true
+		}
+	}
+	return false
+}
+
+
+
+func reverse(arr) {
+	start = 0
+	end = length(arr) - 1
+	for(i = 0, i < length(arr) / 2, i++) {
+		temp = arr[start]
+		arr[start] = arr[end]
+		arr[end] = temp
+		start++
+		end--
+	}
+	return arr
+}
+
+func count(arr, item) {
+	result = 0
+	for(item2 : arr) {
+		if (item2 == item) {
+			result++
+		}
+	}
+	return result
+}
+
+func index(arr, item) {
+	for(i : range(length(arr))) {
+		if (item == arr[i]) {
+			return i
+		}
+	}
+	return -1
+}
+
+
+
+func fill_all(arr, value) {
+	for(i = 0, i < length(arr), i++) {
+		arr[i] = value
+	}
+	return arr
+}
+
+func fill_range(arr, start, end, value) {
+	for(i = start, i < end, i++) {
+		arr[i] = value
+	}
+	return arr
+}
+
+
+
+func choice(arr) {
+	return arr[random(0, length(arr))]
+}
+
+func choices(arr, number) {
+	if (arr == []) {
+		return []
+	}
+	result = Array(number)
+	for(i = 0, i < number, i++) {
+		result[i] = choice(arr)
+	}
+	return result
+}
+
+func shiffle(arr) {
+	for(i : range(length(arr))) {
+		j = random(i + 1)
+		temp = arr[i]
+		arr[i] = arr[j]
+		arr[j] = temp
+	}
+	return arr
+}
