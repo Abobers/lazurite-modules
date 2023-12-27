@@ -1,0 +1,97 @@
+using "reflection"
+using "Arrays"
+
+math = JClass("java.lang.Math")
+
+func mean(arr) {
+	result = 0
+	for(item : arr) {
+		result += item
+	}
+	return float(result) / length(arr)
+}
+
+func geometric_mean(arr) {
+	result = 1.0
+	for(item : arr) {
+		result *= item
+	}
+	return math.sqrt(double(result))
+}
+
+func geometric_mean3(arr) {
+	result = 1.0
+	for(item : arr) {
+		result *= item
+	}
+	return math.cbrt(double(result))
+}
+
+func harmonic_mean(arr) {
+	result = 0
+	for(item : arr) {
+		result += 1.0 / item
+	}
+	return length(arr) / result
+}
+
+
+
+func median(arr) {
+	if (arr == []) {
+		return 0
+	}
+	middleindex = length(arr) / 2
+	if (length(arr) % 2) {
+		return arr[int(middleindex)]
+	}
+	else {
+		return arr[middleindex] + arr[middleindex - 1] / 2.0
+	}
+}
+
+func median_high(arr) {
+	if (arr == []) {
+		return 0
+	}
+	middleindex = length(arr) / 2
+	if (length(arr) % 2) {
+		return arr[int(middleindex)]
+	}
+	else {
+		return math.max([middleindex], arr[middleindex - 1])
+	}
+}
+
+func median_low(arr) {
+	if (arr == []) {
+		return 0
+	}
+	middleindex = length(arr) / 2
+	if (length(arr) % 2) {
+		return arr[int(middleindex)]
+	}
+	else {
+		return math.min([middleindex], arr[middleindex - 1])
+	}
+}
+
+
+
+func mode(arr) {
+	max_count = 0
+	result = 0
+	for(item1 : arr) {
+		count = 0
+		for(item2 : arr) {
+			if (item1 == item2) {
+				count++
+			}
+		}
+		if (count > max_count) {
+			max_count = count
+			result = item1
+		}
+	}
+	return result
+}
