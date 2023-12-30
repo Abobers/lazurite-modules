@@ -1,5 +1,4 @@
 using "reflection"
-using "Arrays"
 
 math = JClass("java.lang.Math")
 

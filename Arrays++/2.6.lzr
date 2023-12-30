@@ -50,7 +50,7 @@ func all(arr) {
 }
 
 func in(value, arr) {
-	for (item : arr) {
+	for(item : arr) {
 		if (item == value) {
 			return true
 		}
